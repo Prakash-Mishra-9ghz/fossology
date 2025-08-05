@@ -172,12 +172,13 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y \
-          build-essential cmake pkg-config \
-          libglib2.0-dev librpm-dev libmagic-dev zlib1g-dev \
-          libpq-dev uuid-dev libxml2-dev libxslt1-dev \
-          libpcre3-dev libssl-dev libcurl4-openssl-dev \
-          libjson-glib-dev bison flex
-          sudo apt-get install -y libjson-c-dev
+          build-essential pkg-config \
+          libglib2.0-dev librpm-dev \
+          libxml2-dev libxslt1-dev \
+          libjson-c-dev
+
+      - name: Setup CMake
+        uses: lukka/get-cmake@v4.0.3
 
       - name: Build Nomossa
         run: |
